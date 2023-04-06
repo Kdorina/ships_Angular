@@ -1,6 +1,11 @@
 <form action="" [formGroup]="addForm" (ngSubmit)="addShip()">
 
   <div class="input">
+    <label for="" class="form-label">Id</label>
+    <input type="text" class="form-control" formControlName="id">
+    </div>
+
+  <div class="input">
 <label for="" class="form-label">Name</label>
 <input type="text" class="form-control" formControlName="name">
 </div>

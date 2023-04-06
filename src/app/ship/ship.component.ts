@@ -14,6 +14,7 @@ export class ShipComponent implements OnInit{
 
   ngOnInit(): void {
     this.addForm=this.fb.group({
+      id:[''],
       name:[''],
       length:[''],
       price:[''],
@@ -33,9 +34,17 @@ export class ShipComponent implements OnInit{
 
 /* addship!:any; */
   addShip(){
-    this.api.addShip().subscribe({
+    let ship={
+      id:this.addForm.value.id,
+      name:this.addForm.value.name,
+      length:this.addForm.value.length,
+      price:this.addForm.value.price,
+      person:this.addForm.value.person,
+      trailer:this.addForm.value.trailer
+    }
+    this.api.addShip(ship).subscribe({
       next:res=>{
-        console.log(res)
+        console.log(res, 'Success!')
       }
     })
   }

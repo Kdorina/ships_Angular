@@ -23,15 +23,15 @@ export class ApiService {
   }
 
 
-  addShip(){
-    let header = new HttpHeaders({
+  addShip(ship:any){
+    let headers = new HttpHeaders({
       'Content-Type':'application/json'
     });
 
     let httpOption={
-      headers:header
+      headers: headers
     }
 
-    return this.http.post<any>(this.url, httpOption);
+    return this.http.post<any>(this.url, ship, httpOption);
   }
 }
