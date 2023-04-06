@@ -24,15 +24,16 @@ export class ShipComponent implements OnInit{
     this.getShips();
   }
 
+  ships!:any;
   getShips(){
     this.api.getShips().subscribe({
       next:res=>{
         console.log(res);
+        this.ships=res;
       }
     })
   }
 
-/* addship!:any; */
   addShip(){
     let ship={
       id:this.addForm.value.id,

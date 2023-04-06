@@ -34,3 +34,26 @@
   <button type="submit" class="btn btn-info">Add</button>
 </div>
 </form>
+
+<div class="container">
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Length</th>
+      <th>Price</th>
+      <th>Person</th>
+      <th>Trailer</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let ship of ships">
+        <td>{{ship.name}}</td>
+        <td>{{ship.length}}</td>
+        <td>{{ship.price}}</td>
+        <td>{{ship.person}}</td>
+        <td>{{ship.trailer}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
