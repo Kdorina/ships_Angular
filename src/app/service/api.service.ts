@@ -21,4 +21,9 @@ export class ApiService {
 
     return this.http.get<any>(this.url, httpOption);
   }
+
+
+  addShip(){
+
+  }
 }
