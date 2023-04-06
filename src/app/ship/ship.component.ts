@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ship',
@@ -9,9 +9,17 @@ import { FormGroup } from '@angular/forms';
 })
 export class ShipComponent implements OnInit{
 
-  constructor(private api: ApiService,){}
+  addForm!:FormGroup;
+  constructor(private api: ApiService, private fb:FormBuilder){}
 
   ngOnInit(): void {
+    this.addForm=this.fb.group({
+      name:[''],
+      length:[''],
+      price:[''],
+      person:[''],
+      trailer:[''],
+    });
     this.getShips();
   }
 
@@ -23,7 +31,12 @@ export class ShipComponent implements OnInit{
     })
   }
 
+/* addship!:any; */
   addShip(){
-
+    this.api.addShip().subscribe({
+      next:res=>{
+        console.log(res)
+      }
+    })
   }
 }

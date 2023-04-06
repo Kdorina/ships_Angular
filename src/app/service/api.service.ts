@@ -24,6 +24,14 @@ export class ApiService {
 
 
   addShip(){
+    let header = new HttpHeaders({
+      'Content-Type':'application/json'
+    });
 
+    let httpOption={
+      headers:header
+    }
+
+    return this.http.post<any>(this.url, httpOption);
   }
 }
