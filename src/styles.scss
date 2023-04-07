@@ -1,2 +1,17 @@
+/*
+* File: style.scss
+* Author: Kovács Dorina
+* Copyright: 2023, Kovács Dorina
+* Group: Szoft II/N
+* Date: 2023-04-07
+* Github: https://github.com/Kdorina/
+* Licenc: GNU GPL
+*/
+
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap';
+body
+{
+  background: url('/assets/ship.jpg') no-repeat;
+  background-size: cover;
+}

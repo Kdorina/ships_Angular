@@ -1,8 +1,12 @@
-body
-{
-  background: url('/assets/ship.jpg') no-repeat;
-  background-size: cover;
-}
+/*
+* File: ship.component.scss
+* Author: Kovács Dorina
+* Copyright: 2023, Kovács Dorina
+* Group: Szoft II/N
+* Date: 2023-04-07
+* Github: https://github.com/Kdorina/
+* Licenc: GNU GPL
+*/
 
 h1{
   display: flex;
@@ -44,5 +48,13 @@ text-align: center;
 }
 td{
   padding: 10px;
+  text-align: center;
+}
+
+footer
+{
+  padding: 15px;
+  background-color: black;
+  color: white;
   text-align: center;
 }

@@ -1,3 +1,12 @@
+/*
+* File: ship.component.ts
+* Author: Kovács Dorina
+* Copyright: 2023, Kovács Dorina
+* Group: Szoft II/N
+* Date: 2023-04-07
+* Github: https://github.com/Kdorina/
+* Licenc: GNU GPL
+*/
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
