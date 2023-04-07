@@ -1,0 +1,48 @@
+body
+{
+  background: url('/assets/ship.jpg') no-repeat;
+  background-size: cover;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding: 10px;
+}
+
+.input{
+  width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+}
+label{
+  font-weight: 600;
+}
+.formBtn{
+  display: flex;
+  justify-content: center;
+}
+
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+.shipData{
+  display: flex;
+  justify-content: center;
+  background-color: #ffffffd0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 800vh;
+  box-shadow: 0px 1px 4px;
+}
+th{
+padding: 20px;
+text-align: center;
+}
+td{
+  padding: 10px;
+  text-align: center;
+}

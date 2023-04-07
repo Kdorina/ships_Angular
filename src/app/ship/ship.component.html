@@ -1,59 +1,64 @@
-<form action="" [formGroup]="addForm" (ngSubmit)="addShip()">
+<body>
+  <h1>Ships Database</h1>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button type="button" (click)="button()" class="btn btn-light" id="button">Add new ship</button>
+  </div>
 
-  <div class="input">
-    <label for="" class="form-label">Id</label>
-    <input type="text" class="form-control" formControlName="id">
+    <form [formGroup]="addForm" *ngIf="show" (ngSubmit)="addShip()">
+      <div class="m-2 row justify-content-center">
+        <div class="input" style="background-color: #000000b0; color: #ffffff;">
+        <label for="" class="form-label mt-2">Id</label>
+        <input type="text" class="form-control" formControlName="id">
+          <span *ngIf="addForm.controls['id'].errors?.['required']"></span>
+
+        <label for="" class="form-label mt-2">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+        <span *ngIf="addForm.controls['name'].errors?.['required']"></span>
+
+        <label for="" class="form-label mt-2">Length</label>
+        <input type="text" class="form-control" formControlName="length">
+        <span *ngIf="addForm.controls['length'].errors?.['required']"></span>
+
+        <label for="" class="form-label mt-2">Price</label>
+        <input type="text" class="form-control" formControlName="price">
+        <span *ngIf="addForm.controls['price'].errors?.['required']"></span>
+
+        <label for="" class="form-label mt-2">Person</label>
+        <input type="text" class="form-control" formControlName="person">
+        <span *ngIf="addForm.controls['person'].errors?.['required']"></span>
+
+        <label for="" class="form-label mt-2">Trailer</label>
+        <input type="text" class="form-control" formControlName="trailer">
+        <span *ngIf="addForm.controls['trailer'].errors?.['required']"></span>
+
+        <div class="d-grid gap-2 ">
+          <button type="submit" class="btn btn-light mt-3 ">Add</button>
+        </div>
+          </div>
+      </div>
+    </form>
+
+
+  <div class="container">
+    <div class="m-2 shipData">
+      <table class="table table-striped">
+        <thead>
+          <th>Name</th>
+          <th>Length</th>
+          <th>Price</th>
+          <th>Person</th>
+          <th>Trailer</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ship of ships">
+            <td>{{ship.name}}</td>
+            <td>{{ship.length}}</td>
+            <td>{{ship.price}}</td>
+            <td>{{ship.person}}</td>
+            <td>{{ship.trailer}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
-  <div class="input">
-<label for="" class="form-label">Name</label>
-<input type="text" class="form-control" formControlName="name">
-</div>
-
-<div class="input">
-  <label for="" class="form-label">Length</label>
-  <input type="text" class="form-control" formControlName="length">
-</div>
-
-<div class="input">
-  <label for="" class="form-label">Price</label>
-  <input type="text" class="form-control" formControlName="price">
-</div>
-
-<div class="input">
-  <label for="" class="form-label">Person</label>
-  <input type="text" class="form-control" formControlName="person">
-</div>
-
-<div class="input">
-  <label for="" class="form-label">Trailer</label>
-  <input type="text" class="form-control" formControlName="trailer">
-</div>
-
-<div class="addButton">
-  <button type="submit" class="btn btn-info">Add</button>
-</div>
-</form>
-
-<div class="container">
-  <table>
-    <thead>
-      <th>Name</th>
-      <th>Length</th>
-      <th>Price</th>
-      <th>Person</th>
-      <th>Trailer</th>
-    </thead>
-
-    <tbody>
-      <tr *ngFor="let ship of ships">
-        <td>{{ship.name}}</td>
-        <td>{{ship.length}}</td>
-        <td>{{ship.price}}</td>
-        <td>{{ship.person}}</td>
-        <td>{{ship.trailer}}</td>
-
-      </tr>
-    </tbody>
-  </table>
-</div>
+  </div>
+</body>

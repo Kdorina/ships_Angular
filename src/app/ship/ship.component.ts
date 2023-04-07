@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-ship',
@@ -14,12 +14,12 @@ export class ShipComponent implements OnInit{
 
   ngOnInit(): void {
     this.addForm=this.fb.group({
-      id:[''],
-      name:[''],
-      length:[''],
-      price:[''],
-      person:[''],
-      trailer:[''],
+      id:['',Validators.required],
+      name:['', Validators.required],
+      length:['', Validators.required],
+      price:['', Validators.required],
+      person:['', Validators.required],
+      trailer:['', Validators.required],
     });
     this.getShips();
   }
@@ -34,6 +34,11 @@ export class ShipComponent implements OnInit{
     })
   }
 
+  show!:any;
+  button(){
+    this.show=true;
+  }
+
   addShip(){
     let ship={
       id:this.addForm.value.id,
@@ -45,7 +50,7 @@ export class ShipComponent implements OnInit{
     }
     this.api.addShip(ship).subscribe({
       next:res=>{
-        console.log(res, 'Success!')
+        console.log(res, 'Success!');
       }
     })
   }
